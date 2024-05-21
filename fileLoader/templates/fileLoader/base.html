@@ -7,19 +7,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Loader</title>
-    <link rel="stylesheet" href="{% static 'fileLoader/styles.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'fileLoader/style.css' %}">
 </head>
 <body>
-    <header>
-        <h1>File Loader</h1>
-        <nav>
-            <a href="{% url 'homepage' %}">Home</a>
-            <a href="{% url 'upload_file' %}">Upload File</a>
-        </nav>
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <h1 class="h3">File Loader</h1>
+            <nav class="nav">
+                <a class="nav-link text-white" href="{% url 'homepage' %}">Home</a>
+                <a class="nav-link text-white" href="{% url 'upload_file' %}">Upload File</a>
+            </nav>
+        </div>
     </header>
-    <main>
+    <main class="container mt-4">
         {% block content %}
         {% endblock %}
     </main>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

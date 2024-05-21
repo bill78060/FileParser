@@ -1,17 +1,22 @@
 {% extends 'fileLoader/base.html' %}
 {%load static%}
 {% block content %}
-<h2>{{ file.name }}</h2>
-<div class="file-content">
-    {% for line in file.content.splitlines %}
-        {% if line|length < 120 %}
-        <p>{{ line }}</p>
-        {% else %}
-        <pre><code>{{ line }}</code></pre>
-        {% endif %}
-    {% endfor %}
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="h5">{{ file.name }}</h2>
+        <a href="{% url 'edit_file' file.id %}" class="btn btn-secondary btn-sm">Edit</a>
+    </div>
+    <div class="card-body file-content">
+        {% for line in file.content.splitlines %}
+            {% if line|length < 120 %}
+            <p>{{ line }}</p>
+            {% else %}
+            <pre><code>{{ line }}</code></pre>
+            {% endif %}
+        {% endfor %}
+    </div>
 </div>
-<a href="{% url 'edit_file' file.id %}">Edit</a>
 {% endblock %}
 
 
