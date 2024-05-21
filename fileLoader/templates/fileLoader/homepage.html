@@ -1,0 +1,13 @@
+{% extends 'fileLoader/base.html' %}
+{%load static%}
+{% block content %}
+<h2>Uploaded Files</h2>
+<ul>
+    {% for file in files %}
+    <li>
+        <a href="{% url 'view_file' file.id %}">{{ file.name }}</a>
+        <a href="{% url 'delete_file' file.id %}" onclick="return confirm('Are you sure?');">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

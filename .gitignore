@@ -1,0 +1,23 @@
+# .gitignore
+*.pyc
+*~
+__pycache__
+db.sqlite3
+/media
+/staticfiles
+.DS_Store
+*.log
+*.pot
+*.pyc
+*.so
+*.out
+*.log
+*.sqlite3
+*.pyo
+*.db
+*.env
+venv/
+env/
+.env
+*.egg-info/
+*.migrations/

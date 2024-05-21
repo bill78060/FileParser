@@ -1,0 +1,25 @@
+
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Loader</title>
+    <link rel="stylesheet" href="{% static 'fileLoader/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>File Loader</h1>
+        <nav>
+            <a href="{% url 'homepage' %}">Home</a>
+            <a href="{% url 'upload_file' %}">Upload File</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% extends 'fileLoader/base.html' %}
+{%load static%}
+{% block content %}
+<h2>{{ file.name }}</h2>
+<div class="file-content">
+    {% for line in file.content.splitlines %}
+        {% if line|length < 120 %}
+        <p>{{ line }}</p>
+        {% else %}
+        <pre><code>{{ line }}</code></pre>
+        {% endif %}
+    {% endfor %}
+</div>
+<a href="{% url 'edit_file' file.id %}">Edit</a>
+{% endblock %}
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ file.name }}</title>
+    <link rel="stylesheet" href="{% static 'fileLoader/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Text File Parser</h1>
+        </header>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'homepage' %}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <div class="content-overlay">
+                {{ file.content|safe }}
+                <a href="{% url 'edit_file' file.id %}">Edit</a>
+            </div>
+        </main>
+        <footer>
+            <div class="social-icons">
+                <a href="#">Icon1</a>
+                <a href="#">Icon2</a>
+                <a href="#">Icon3</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Your Company. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> -->
